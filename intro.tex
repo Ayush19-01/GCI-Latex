@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{calc}
+\usepackage{eso-pic}
+
+\newlength{\PageFrameTopMargin}
+\newlength{\PageFrameBottomMargin}
+\newlength{\PageFrameLeftMargin}
+\newlength{\PageFrameRightMargin}
+
+\setlength{\PageFrameTopMargin}{1cm}
+\setlength{\PageFrameBottomMargin}{1cm}
+\setlength{\PageFrameLeftMargin}{1cm}
+\setlength{\PageFrameRightMargin}{1cm}
+
+\makeatletter
+
+\newlength{\Page@FrameHeight}
+\newlength{\Page@FrameWidth}
+
+\AddToShipoutPicture{
+  \thinlines
+  \setlength{\Page@FrameHeight}{\paperheight-\PageFrameTopMargin-\PageFrameBottomMargin}
+  \setlength{\Page@FrameWidth}{\paperwidth-\PageFrameLeftMargin-\PageFrameRightMargin}
+  \put(\strip@pt\PageFrameLeftMargin,\strip@pt\PageFrameTopMargin){
+    \framebox(\strip@pt\Page@FrameWidth, \strip@pt\Page@FrameHeight){}}}
+
+\makeatother
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{GCI}
+\lhead{Latex Task}
+\begin{document}
+	\begin{center}
+	\huge{\bfseries GCI-Introduction To Latex}
+	\line(1,0){400}\\
+	[0.4cm]
+	\textsc{\Large Made for GCI by Ayush19}\\
+	[0.5cm]
+	\end{center}
+	\texts{\Large Hello, my name is Ayush, I am 17 years old and I am currently in 12th grade in Amity International School. I have coding, graphic designing, playing cricket and video games as my hobby.I have decided that I will pursue a career in the field of software development and coding}\\
+	[0.5cm]
+	\texts{\Large GCI till now has been a wonderful experience for me , I have tried and accomplished things which I didn't even think of doing. I have been working really hard for GCI with the aim of not only winning but contributing to this amazing initiative of open source.}\\
+        [0.5cm]
+	\texts{\Large I have a github  as well(some repositories are private for now) \href{https://github.com/Ayush19-01}{click.}}
+	\begin{figure}[b!]
+	\includegraphics[width=\linewidth]{fedora.png}
+	\caption{Fedora}
+	\label{fig:Logo}
+        \end{figure}
+\end{document} 
